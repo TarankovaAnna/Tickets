@@ -2,6 +2,7 @@ package ru.netology.domain;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class TicketsRepository {
     private Tickets[] tickets = new Tickets[0];

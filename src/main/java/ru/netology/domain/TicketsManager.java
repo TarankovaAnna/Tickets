@@ -1,9 +1,11 @@
 package ru.netology.domain;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class TicketsManager {
     protected TicketsRepository repo;
+
 
     public TicketsManager(TicketsRepository repo) {
         this.repo = repo;
@@ -30,6 +32,22 @@ public class TicketsManager {
             }
         }
         Arrays.sort(result);
+        return result;
+    }
+
+    public Tickets[] findAll(String from, String to, Comparator<Tickets> comparator) {
+        Tickets[] result = new Tickets[0];
+        for (Tickets ticket : repo.findAll()) {
+            if (matches(ticket, from, to)) {
+                Tickets[] tmp = new Tickets[result.length + 1];
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i] = result[i];
+                }
+                tmp[tmp.length - 1] = ticket;
+                result = tmp;
+            }
+        }
+        Arrays.sort(result, comparator);
         return result;
     }
 
