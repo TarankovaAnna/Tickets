@@ -25,8 +25,6 @@ public class TicketsManagerTests {
     Tickets ticket12 = new Tickets(8, 14_800, "VOG", "AER", 80);
 
 
-
-
     @BeforeEach
 
     public void setup() {
