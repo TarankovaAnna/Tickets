@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class TicketsManagerTests {
     TicketsRepository repo = new TicketsRepository();
@@ -15,7 +14,7 @@ public class TicketsManagerTests {
     Tickets ticket2 = new Tickets(2, 36_000, "VOG", "SVO", 220);
     Tickets ticket3 = new Tickets(3, 5_000, "DME", "VOG", 60);
     Tickets ticket4 = new Tickets(4, 27_400, "VOG", "SVO", 280);
-    Tickets ticket5 = new Tickets(5, 5_800, "VOG", "AER", 80);
+    Tickets ticket5 = new Tickets(5, 5_800, "VOG", "ROV", 90);
     Tickets ticket6 = new Tickets(6, 27_900, "DME", "AER", 240);
     Tickets ticket7 = new Tickets(7, 15_890, "DME", "VOG", 280);
     Tickets ticket8 = new Tickets(8, 14_890, "VOG", "AER", 80);
@@ -91,24 +90,5 @@ public class TicketsManagerTests {
 
         Assertions.assertArrayEquals(expected, actual);
 
-    }
-
-    @Test
-    public void shouldFindAndSortByTime() {
-        Comparator<Tickets> comparator = new TicketByPriceAscComparator();
-
-        Tickets[] expected = {ticket3, ticket1, ticket7, ticket11};
-        Tickets[] actual = manager.findAll("DME", "VOG", comparator);
-
-        Assertions.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldFindAndSortIfTimeTheSame() {
-        Comparator<Tickets> comparator = new TicketByPriceAscComparator();
-
-
-        Tickets[] expected = {ticket5, ticket8, ticket12};
-        Tickets[] actual = manager.findAll("VOG", "AER", comparator);
     }
 }

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class TicketsRepositoryTests {
     TicketsRepository repo = new TicketsRepository();
-
     Tickets ticket1 = new Tickets(1, 12_000, "DME", "VOG", 210);
     Tickets ticket2 = new Tickets(2, 36_000, "VOG", "SVO", 220);
     Tickets ticket3 = new Tickets(3, 5_000, "DME", "VOG", 60);
