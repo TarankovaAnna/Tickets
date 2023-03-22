@@ -29,7 +29,7 @@ public class Tickets implements Comparable<Tickets> {
     }
 
 
-//    public int getId() {
+    //    public int getId() {
 //        return id;
 //    }
 //
@@ -61,9 +61,9 @@ public class Tickets implements Comparable<Tickets> {
 //        this.to = arrivalAirport;
 //    }
 
-//    public int getTime() {
-//        return time;
-//    }
+    public int getTime() {
+        return time;
+    }
 //
 //    public void setTime(int time) {
 //        this.time = time;
