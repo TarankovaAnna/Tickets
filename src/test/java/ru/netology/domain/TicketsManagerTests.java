@@ -71,7 +71,6 @@ public class TicketsManagerTests {
     @Test
     public void shouldFindIfToDoNotExist() {
 
-
         Tickets[] expected = {};
 
         Tickets[] actual = manager.findAll("VOG", "LED");
