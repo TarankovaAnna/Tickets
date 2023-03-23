@@ -9,6 +9,7 @@ public class Tickets implements Comparable<Tickets> {
     protected String from;
     protected String to;
     protected int time;
+
     public Tickets(int id, int price, String from, String to, int time) {
         this.id = id;
         this.price = price;
@@ -26,7 +27,6 @@ public class Tickets implements Comparable<Tickets> {
             return 0;
         }
     }
-
 
 
 //    public int getId() {
